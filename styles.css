@@ -155,8 +155,6 @@ a {
 
 .marquee {
   overflow: hidden;
-  border-top: 1px dashed var(--line);
-  border-bottom: 1px dashed var(--line);
   background: var(--red);
   color: var(--white);
 }
@@ -410,7 +408,9 @@ p {
   align-content: center;
   gap: clamp(40px, 8vw, 94px);
   padding: clamp(40px, 7vw, 90px) 10vw;
-  background: var(--red);
+  background:
+    linear-gradient(0deg, var(--black) 0, rgba(3, 3, 3, 0.82) 72px, rgba(3, 3, 3, 0.34) 146px, transparent 260px),
+    var(--red);
   overflow: hidden;
 }
 
