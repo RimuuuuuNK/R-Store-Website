@@ -92,7 +92,7 @@ a {
 }
 
 .mega-title {
-  width: 80vw;
+  width: max-content;
   margin: 0 auto;
   color: var(--cream);
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -328,9 +328,12 @@ p {
   min-height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   padding: clamp(28px, 4.6vw, 70px);
   background: var(--red);
+  outline: none;
+  overflow: hidden;
+  transition: background 180ms ease;
 }
 
 .detail-card:nth-child(2) {
@@ -338,9 +341,10 @@ p {
 }
 
 .detail-card h2 {
-  margin-bottom: 18px;
+  margin-bottom: 0;
   font-size: clamp(2.6rem, 4.8vw, 5.8rem);
   line-height: 0.98;
+  transition: transform 220ms ease, margin 220ms ease;
 }
 
 .detail-card p:last-child {
@@ -348,6 +352,34 @@ p {
   max-width: 520px;
   font-size: clamp(1rem, 1.25vw, 1.24rem);
   line-height: 1.78;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(18px);
+  transition: max-height 260ms ease, opacity 220ms ease, transform 220ms ease;
+}
+
+.detail-card:hover,
+.detail-card:focus-visible {
+  background: #b50a02;
+}
+
+.detail-card:nth-child(2):hover,
+.detail-card:nth-child(2):focus-visible {
+  background: #4b0200;
+}
+
+.detail-card:hover h2,
+.detail-card:focus-visible h2 {
+  margin-bottom: 22px;
+  transform: translateY(-18px);
+}
+
+.detail-card:hover p:last-child,
+.detail-card:focus-visible p:last-child {
+  max-height: 240px;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .links {
@@ -407,7 +439,7 @@ p {
   }
 
   .mega-title {
-    width: 88vw;
+    width: max-content;
   }
 
   .feature,

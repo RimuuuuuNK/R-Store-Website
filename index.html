@@ -88,7 +88,7 @@
     </section>
 
     <section class="details" id="guide">
-      <div class="detail-card">
+      <div class="detail-card" tabindex="0">
         <p class="section-kicker">About</p>
         <h2>個人制作の<br>小さなお店です。</h2>
         <p>
@@ -96,7 +96,7 @@
           価格を抑えつつ、複数アバター対応の商品づくりを目指しています。
         </p>
       </div>
-      <div class="detail-card">
+      <div class="detail-card" tabindex="0">
         <p class="section-kicker">Price</p>
         <h2>買いやすい<br>価格帯</h2>
         <p>
@@ -104,7 +104,7 @@
           まず試しやすい価格で、ちょっとした着せ替えを楽しめます。
         </p>
       </div>
-      <div class="detail-card">
+      <div class="detail-card" tabindex="0">
         <p class="section-kicker">Before Buy</p>
         <h2>購入前の<br>確認</h2>
         <p>
@@ -147,15 +147,17 @@
   <script>
     const fitTitles = () => {
       document.querySelectorAll(".fit-title").forEach((title) => {
-        title.style.fontSize = "10px";
+        title.style.width = "max-content";
+        title.style.fontSize = "200px";
         const targetWidth = window.innerWidth * 0.8;
-        const currentWidth = title.scrollWidth || 1;
-        title.style.fontSize = `${(targetWidth / currentWidth) * 10}px`;
+        const currentWidth = title.getBoundingClientRect().width || 1;
+        title.style.fontSize = `${(targetWidth / currentWidth) * 200}px`;
       });
     };
 
     window.addEventListener("resize", fitTitles);
     window.addEventListener("load", fitTitles);
+    document.fonts?.ready?.then(fitTitles);
     fitTitles();
   </script>
 </body>
