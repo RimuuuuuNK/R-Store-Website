@@ -86,7 +86,7 @@ a {
   align-content: space-between;
   padding: clamp(18px, 3vw, 42px) 10vw 54px;
   background:
-    linear-gradient(180deg, var(--black) 0 12%, transparent 12%),
+    linear-gradient(180deg, var(--black) 0, rgba(3, 3, 3, 0.82) 72px, rgba(3, 3, 3, 0.34) 146px, transparent 260px),
     linear-gradient(180deg, var(--deep-red), var(--red));
   overflow: hidden;
 }
@@ -179,9 +179,10 @@ a {
 
 .marquee span {
   flex: 0 0 auto;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: clamp(1.2rem, 2vw, 2rem);
-  letter-spacing: 0.18em;
+  font-family: "Noto Sans JP", Arial, sans-serif;
+  font-size: clamp(0.98rem, 1.45vw, 1.45rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
 }
 
 @keyframes marquee {
@@ -344,7 +345,7 @@ p {
   margin-bottom: 0;
   font-size: clamp(2.6rem, 4.8vw, 5.8rem);
   line-height: 0.98;
-  transition: transform 220ms ease, margin 220ms ease;
+  transition: transform 520ms cubic-bezier(0.19, 1, 0.22, 1), margin 520ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .detail-card p:last-child {
@@ -356,7 +357,7 @@ p {
   opacity: 0;
   overflow: hidden;
   transform: translateY(18px);
-  transition: max-height 260ms ease, opacity 220ms ease, transform 220ms ease;
+  transition: max-height 680ms cubic-bezier(0.19, 1, 0.22, 1), opacity 520ms ease, transform 560ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .detail-card:hover,
@@ -398,8 +399,9 @@ p {
 }
 
 .link-buttons {
-  grid-column: 1 / -1;
+  grid-column: 2;
   justify-content: flex-start;
+  align-self: start;
 }
 
 .closing {
@@ -446,6 +448,10 @@ p {
   .links,
   .info-grid {
     grid-template-columns: 1fr;
+  }
+
+  .link-buttons {
+    grid-column: auto;
   }
 
   .feature-image,
