@@ -11,7 +11,7 @@
   <title>R-STORE | VRChat Clothing</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
 
   <main id="top">
     <section class="hero">
-      <p class="mega-title" aria-label="R-STORE">R-STORE</p>
+      <p class="mega-title fit-title" aria-label="R-STORE">R-STORE</p>
       <div class="hero-copy">
         <p>
           R-StoreはVRC向けの商品を低価格で販売中。<br>
@@ -45,7 +45,12 @@
 
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>R-Store Items</span><span>R-Store Items</span><span>R-Store Items</span><span>R-Store Items</span>
+        <div class="marquee-group">
+          <span>R-Store Items</span><span>R-Store Items</span><span>R-Store Items</span><span>R-Store Items</span>
+        </div>
+        <div class="marquee-group">
+          <span>R-Store Items</span><span>R-Store Items</span><span>R-Store Items</span><span>R-Store Items</span>
+        </div>
       </div>
     </div>
 
@@ -55,7 +60,7 @@
         <p class="section-kicker">Popular Item</p>
         <h1>人気アイテム</h1>
         <p>
-          およそJPY 300-ほどの商品で構成されています。
+          およそJPY 300-ほどの商品で構成されています。<br>
           低価格でちょっとした衣装をお手にとって見てください。
         </p>
         <a class="button light" href="https://r-store.booth.pm/items/8027775" target="_blank" rel="noopener">この商品を見る</a>
@@ -71,7 +76,7 @@
         <p class="section-kicker">Nemu Fuwa Pajama</p>
         <h2>ふんわり、とろけるような夢心地を。</h2>
         <p>
-          23アバター対応、Modular Avatar対応済み。
+          23アバター対応、Modular Avatar対応済み。<br>
           ドラッグ＆ドロップで扱いやすい構成を目指しています。
         </p>
       </div>
@@ -85,25 +90,25 @@
     <section class="details" id="guide">
       <div class="detail-card">
         <p class="section-kicker">About</p>
-        <h2>個人制作の小さなお店です。</h2>
+        <h2>個人制作の<br>小さなお店です。</h2>
         <p>
-          R-STOREでは、VRChatで使える衣装やテクスチャを中心にBOOTHで公開しています。
+          R-STOREでは、VRChatで使える衣装やテクスチャを中心にBOOTHで公開しています。<br>
           価格を抑えつつ、複数アバター対応の商品づくりを目指しています。
         </p>
       </div>
       <div class="detail-card">
         <p class="section-kicker">Price</p>
-        <h2>買いやすい価格帯</h2>
+        <h2>買いやすい<br>価格帯</h2>
         <p>
-          ねむふわぱじゃまはFullSet 900 JPY、単品 300 JPY。
+          ねむふわぱじゃまはFullSet 900 JPY、単品 300 JPY。<br>
           まず試しやすい価格で、ちょっとした着せ替えを楽しめます。
         </p>
       </div>
       <div class="detail-card">
         <p class="section-kicker">Before Buy</p>
-        <h2>購入前の確認</h2>
+        <h2>購入前の<br>確認</h2>
         <p>
-          対応アバター、導入条件、同梱内容は各BOOTH商品ページで確認してください。
+          対応アバター、導入条件、同梱内容は各BOOTH商品ページで確認してください。<br>
           商品によってはModular AvatarやlilToonなどの導入が必要です。
         </p>
       </div>
@@ -117,7 +122,8 @@
       <div class="info-grid">
         <p>
           免責事項<br>
-          データ販売のため返金などは行えません。ご理解ください。
+          データ販売のため返金などは行えません。<br>
+          ご理解ください。
         </p>
         <p>
           VRC / Booth<br>
@@ -134,8 +140,23 @@
 
     <section class="closing">
       <p class="closing-note">R-Store items.</p>
-      <p class="mega-title bottom" aria-label="R-STORE">R-STORE</p>
+      <p class="mega-title bottom fit-title" aria-label="R-STORE">R-STORE</p>
     </section>
   </main>
+
+  <script>
+    const fitTitles = () => {
+      document.querySelectorAll(".fit-title").forEach((title) => {
+        title.style.fontSize = "10px";
+        const targetWidth = window.innerWidth * 0.8;
+        const currentWidth = title.scrollWidth || 1;
+        title.style.fontSize = `${(targetWidth / currentWidth) * 10}px`;
+      });
+    };
+
+    window.addEventListener("resize", fitTitles);
+    window.addEventListener("load", fitTitles);
+    fitTitles();
+  </script>
 </body>
 </html>

@@ -64,12 +64,11 @@ a {
     radial-gradient(circle at 28px 50%, currentColor 0 7px, transparent 7.5px),
     radial-gradient(circle at 38px 50%, currentColor 0 7px, transparent 7.5px);
   color: var(--cyan);
-  clip-path: inset(0 0 0 0);
 }
 
 .nav {
   display: flex;
-  gap: clamp(28px, 5vw, 64px);
+  gap: clamp(22px, 4vw, 56px);
   font-size: 1rem;
 }
 
@@ -85,7 +84,7 @@ a {
   min-height: calc(100vh - 82px);
   display: grid;
   align-content: space-between;
-  padding: clamp(22px, 4vw, 56px) clamp(20px, 3.8vw, 70px) 54px;
+  padding: clamp(18px, 3vw, 42px) 10vw 54px;
   background:
     linear-gradient(180deg, var(--black) 0 12%, transparent 12%),
     linear-gradient(180deg, var(--deep-red), var(--red));
@@ -93,14 +92,16 @@ a {
 }
 
 .mega-title {
-  margin: 0;
+  width: 80vw;
+  margin: 0 auto;
   color: var(--cream);
-  font-family: "Oswald", Impact, sans-serif;
-  font-size: clamp(6.4rem, 27vw, 25rem);
-  font-weight: 700;
-  line-height: 0.9;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 12rem;
+  font-weight: 900;
+  line-height: 0.86;
   letter-spacing: 0;
   white-space: nowrap;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -163,12 +164,22 @@ a {
 .marquee-track {
   width: max-content;
   display: flex;
-  animation: marquee 18s linear infinite;
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+}
+
+.marquee-group {
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: clamp(28px, 4vw, 72px);
+  padding-right: clamp(28px, 4vw, 72px);
 }
 
 .marquee span {
-  padding-right: 76px;
-  font-family: "Oswald", Impact, sans-serif;
+  flex: 0 0 auto;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: clamp(1.2rem, 2vw, 2rem);
   letter-spacing: 0.18em;
 }
@@ -204,7 +215,7 @@ a {
 
 .section-kicker {
   margin: 0;
-  font-family: "Oswald", Impact, sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -251,7 +262,7 @@ p {
   content: "STORE CLOTHING";
   writing-mode: vertical-rl;
   color: rgba(0, 0, 0, 0.78);
-  font-family: "Oswald", Impact, sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: clamp(4.4rem, 7vw, 7rem);
   line-height: 0.8;
 }
@@ -270,7 +281,7 @@ p {
   right: 18px;
   bottom: 14px;
   color: var(--black);
-  font-family: "Oswald", Impact, sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 1rem;
 }
 
@@ -314,11 +325,11 @@ p {
 }
 
 .detail-card {
-  min-height: 340px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: clamp(24px, 4vw, 54px);
+  padding: clamp(28px, 4.6vw, 70px);
   background: var(--red);
 }
 
@@ -327,14 +338,16 @@ p {
 }
 
 .detail-card h2 {
-  margin-bottom: 14px;
-  font-size: clamp(1.8rem, 3vw, 3.2rem);
-  line-height: 1.12;
+  margin-bottom: 18px;
+  font-size: clamp(2.6rem, 4.8vw, 5.8rem);
+  line-height: 0.98;
 }
 
 .detail-card p:last-child {
   margin-bottom: 0;
-  max-width: 420px;
+  max-width: 520px;
+  font-size: clamp(1rem, 1.25vw, 1.24rem);
+  line-height: 1.78;
 }
 
 .links {
@@ -362,7 +375,7 @@ p {
   display: grid;
   align-content: center;
   gap: clamp(40px, 8vw, 94px);
-  padding: clamp(40px, 7vw, 90px) clamp(20px, 3.8vw, 70px);
+  padding: clamp(40px, 7vw, 90px) 10vw;
   background: var(--red);
   overflow: hidden;
 }
@@ -386,6 +399,7 @@ p {
   .nav {
     width: 100%;
     justify-content: space-between;
+    gap: 14px;
   }
 
   .hero {
@@ -393,8 +407,7 @@ p {
   }
 
   .mega-title {
-    font-size: clamp(5.2rem, 31vw, 10rem);
-    white-space: normal;
+    width: 88vw;
   }
 
   .feature,
